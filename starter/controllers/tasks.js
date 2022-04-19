@@ -1,19 +1,22 @@
+const Task=require('../models/Task')
+
 const getAllTasks= (req,res)=>{
     res.send('All Items from the file')
 }
 
-const createTask=(res,req)=>{
-    res.send('create Tasks')
+const createTask= async (req,res)=>{
+    const task=await Task.create(req.body)
+    res.status(201).json({task})
 }
-const getTask=(res,req)=>{
+const getTask=(req,res)=>{
     res.send('Get single task')
 }
 
-const updateTask=(res,req)=>{
+const updateTask=(req,res)=>{
     res.send('Update Task')
 }
 
-const deleteTask=(res,req)=>{
+const deleteTask=(req,res)=>{
     res.send('delete Task')
 }
 
