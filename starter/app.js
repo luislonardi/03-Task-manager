@@ -6,25 +6,13 @@ const connectDB=require('./db/connect')
 
 app.use(express.json())
 app.use('/api/v1/tasks',tasks)
+app.use(express.static('./public'))
 
 
 
 require('dotenv').config()
 
 const port=3000;
-
-//routes
-/* app.get('/',(req,res)=>{
-   res.send('Task manager app')
-}) */
-
-
-
-
-//app.get('/api/v1/tasks')         -get all tasks
-//app.post('/api/v1/tasks')        -create a task
-//app.patch('/api/v1/tasks/:id')   -update task
-//app.delete('/api/v1/tasks/:id')  -delete task
 
 const start= async ()=>{
    try {
